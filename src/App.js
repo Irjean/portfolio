@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
+//Components
+import Profile from './components/main/pages/Profile/Profile';
+import Header from './components/header/Header';
+import PageHeader from "./components/main/components/PageHeader/PageHeader";
+import { useState } from 'react';
 
 function App() {
+  let [page, setPage] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header page={page} />
+        <main className={page ? "show" : ""}>
+        <PageHeader setPage={setPage}/>
+          <Routes>
+            <Route path="profile" element={<Profile setPage={setPage} />} />
+            <Route path="/" element={<></>} />
+          </Routes>
+        </main>
     </div>
   );
 }

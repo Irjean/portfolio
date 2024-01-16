@@ -1,0 +1,36 @@
+.top-page{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 25px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.top-page > div, .top-page > h2{
+    width: 33.3%;
+}
+
+.top-page h2{
+    text-align: center;
+}
+
+.back-button a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--link-color);
+}
+
+.back-button a:hover{
+    text-decoration: underline;
+}
+
+.back-button span{
+    padding-bottom: 5px;
+}
+
+.back-button img{
+    height: 25px;
+}
