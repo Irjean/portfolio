@@ -10,12 +10,17 @@
     border-radius: 50%;
 }
 
-#presentation{
+#presentation, #activity{
     padding: 0 15px;
     margin-top: 30px;
-    width: 100%;
+    width: calc(100% - 30px);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 10px 15px 15px 15px;
+    margin-left: 15px;
 }
 
-#presentation p{
-    width: 100%;
+#presentation h4, #activity h4{
+    margin-bottom: 5px;
+    font-size: 1.1rem;
 }

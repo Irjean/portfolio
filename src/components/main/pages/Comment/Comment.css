@@ -1,0 +1,15 @@
+#comment-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 15px;
+}
+
+#comment-section h2{
+    font-size: 1.3rem;
+}
+
+#giscus{
+    margin-top: 30px;
+}

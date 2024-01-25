@@ -4,6 +4,12 @@ body{
   overflow-x: hidden;
 }
 
+.App{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-container{
   background-color: var(--secondary-color);
   border-radius: 10px;
@@ -11,17 +17,19 @@ body{
 }
 
 header{
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100dvh;
   width: 100dvw;
+  max-width: 780px;
   right: 0;
   padding: 0 15px;
 }
 
 header h1{
   margin: 20px 0;
+  color: var(--text-color);
 }
 
 main{
@@ -39,4 +47,18 @@ main{
 
 .side{
   right: 20%;
+}
+
+@media screen and (min-width: 781px) {
+  header{
+    left: 0;
+    width: 390px;
+    border-right: 1px solid var(--line-color);
+  }
+
+  main, .show{
+    width: calc(100% - 390px);
+    right: 0;
+    left: auto;
+  }
 }

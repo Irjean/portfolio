@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="./assets/style/css/index.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="mobile-nav">
+            <div class="cross">
+
+            </div>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Article</li>
+                    <li>Pricing</li>
+                    <li>Contact</li>
+                </ul>
+                <div class="search-bar">
+                    <input type="search" placeholder="Rechercher ...">
+                    <img src="./assets/images/loupe.png" alt="Icon of a magnifying glass">
+                </div>
+            </nav>
+        </div>
+        
+        <header>
+            <div class="mobile-header">
+                <a href="#"><img src="./assets/images/logo.png" alt="Logo of the company"></a>
+                <div class="menu-burger">
+                    <div class="burger-stick"></div>
+                    <div class="burger-stick"></div>
+                    <div class="burger-stick"></div>
+                </div>
+            </div>
+            <div class="inner-container">
+                <a href="#"><img src="./assets/images/logo.png" alt="Logo of the company"></a>
+                <div class="stick"></div>
+                <div class="social-media">
+                    <a href="https://twitter.com/addyosmani?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/addyosmaniofficial" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                </div>
+                <div class="stick"></div>
+                <ul>
+                    <li>Home</li>
+                    <li>Article</li>
+                    <li>Pricing</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="search-bar">
+                <input type="search" placeholder="Rechercher ...">
+                <img src="./assets/images/loupe.png" alt="Icon of a magnifying glass">
+            </div>
+        </header>
+        <main>
+            <article class="addy-pres">
+                <img src="./assets/images/addyosmani.png" alt="Picture of Addy Osmani">
+                <div>
+                    <h2>Addy Osmani</h2>
+                    <p>Staff Engineer at Google. Working with the Chrome team &#9679; Creator of TodoMVC, Yeoman, Material Design Lite, Web Starte Kit &#9679; Passionate about web tooling</p>
+                </div>
+            </article>
+            <article class="title-banner">
+                <div class="title">
+                    <h1>Accessible UI Components For The Web</h1>
+                    <h3>"The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." - Tim Berners-Lee</h3>
+                </div>
+                <img src="./assets/images/banner.png" alt="Banner showing differents tools">
+            </article>
+            <article class="article-content">
+                <p>To be <strong>accessible</strong>, UI components need to work across multiple devices with varying screen-sizes and different kinds of input. Moreover, componets should be usable bu the broadest group of users, incliding those with disabilities.</p>
+                <section class="slider-container">
+                    <img class="arrow-left" src="./assets/images/arrow-left.png" alt="Image of an arrow pointing left">
+                    <div class="video-container">
+                        <iframe class="tuto-video" width="660" height="415" src="https://www.youtube.com/embed/pBJZsp5LsOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <span class="tuto-title">Accessibility Tooling covered in the new Totally Tooling Tips s03e08</span>
+                    </div>
+                    <img class="arrow-right" src="./assets/images/arrow-right.png" alt="Image of an arrow pointing right">
+                </section>
+                <section class="article-pay">
+                    <div class="shadow"></div>
+                    <p>When designing for accessibility, there are four key areas of disability to consider: visual, hearing, mobility and cognition.</p>
+                    <p>Visual issues can range from an inability to distinguish colors to no vision at all.</p>
+                    
+                    <ul>
+                        <li>Ensure a minimum <a href="#">contrast ratio threshold</a> is met for text content.</li>
+                        <li>Avoid communicating information <a href="#">using solely color</a> and ensure that all text is <a href="#">resizable</a>.</li>
+                        <li>Ensure all user interface components can be used with assistive technologies such as screen readers, magnifiers and braille displays. This entails ensuring that UI components are marked up such that accessibility APIs can programmatically determine the role, state, value and title of any element.</li>
+                    </ul>
+                    <p>Hearing issues mean a user may have issues hearing sound emitted from a page.</p>
+                    <ul>
+                        <li>Make the content understandable using <a href="#">text alternatives</a> for all content that is not strictly text.</li>
+                        <li>Ensure you test that your UI components are still functional <a href="#">without sound</a>.</li>
+                    </ul>
+                    
+                </section>
+                <button class="pay-button">Read more for $2,00/month</button>
+            </article>
+        </main>
+        <footer>
+            <article class="recommandations">
+                <h3>More recommandations</h3>
+                <section class="card-container">
+                    <article class="card">
+                        <img src="./assets/images/article1.png" alt="Preview of the article">
+                        <span>More from Addy Osmani</span>
+                        <h3>Offline Storage From Progressive Web Apps</h3>
+                        <div class="card-author-container">
+                            <img src="./assets/images/addyosmani-small.png" alt="Picture of Addy Osmani">
+                            <div class="card-author">
+                                <h4>Addy Osmani</h4>
+                                <span>6 minutes read</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="./assets/images/article2.png" alt="Preview of the article">
+                        <span>Also tagged Accessibility</span>
+                        <h3>Color My World: The Science of Color in UX</h3>
+                        <div class="card-author-container">
+                            <img src="./assets/images/carolynherman-small.png" alt="Picture of Carolyn Herman">
+                            <div class="card-author">
+                                <h4>Carolyn Herman</h4>
+                                <span>6 minutes read</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="./assets/images/article3.png" alt="Preview of the article">
+                        <span>Also tagged Accessibility</span>
+                        <h3>Implementing Accessibility for a Custom Control in</h3>
+                        <div class="card-author-container">
+                            <img src="./assets/images/coreyfloyd-small.png" alt="Picture of Corey Floyd">
+                            <div class="card-author">
+                                <h4>Corey Floyd</h4>
+                                <span>6 minutes read</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </article>
+        </footer>
+    </body>
+<script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+<script src="./assets/script/index.js"></script>
+</html>

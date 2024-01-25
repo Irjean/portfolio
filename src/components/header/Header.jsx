@@ -11,8 +11,9 @@ import messageImg from "../../assets/img/message.png";
 import bookImg from "../../assets/img/book.png";
 import adobeImg from "../../assets/img/adobe.png";
 import mailImg from "../../assets/img/mail.png";
-import contactImg from "../../assets/img/message.png";
+import contactImg from "../../assets/img/contact.png";
 import docsImg from "../../assets/img/docs.png";
+import statImg from "../../assets/img/stat.png";
 
 function Header(props) {
     const { t } = useTranslation();
@@ -25,18 +26,18 @@ function Header(props) {
           <ProfileCard/>
         </Link>
         <div className='card-container'>
-          <LightCard />
+          <LightCard lightMode={props.lightMode} setLightMode={props.setLightMode} />
           <LangageCard />
         </div>
         <div className='card-container'>
-          <Link to="/profile"><Card content={t("tools")} image={contactImg} /></Link>
-          <Link to="/profile"><Card content={t("exp")} image={docsImg} /></Link>
-          <Link to="/profile"><Card content={t("project")} image={bookImg} /></Link>
+          <Link to="/skill"><Card content={t("tools")} image={statImg} /></Link>
+          <Link to="/experience"><Card content={t("exp")} image={docsImg} /></Link>
+          <Link to="/project"><Card content={t("project")} image={bookImg} /></Link>
         </div>
         <div className='card-container'>
-        <Link to="/profile"><Card content="Contact" image={mailImg} /></Link>
+        <Link to="/contact"><Card content="Contact" image={contactImg} /></Link>
         <a href="Spileers_Clement.pdf" download><Card content={t("downloadCv")} image={adobeImg} /></a>
-        <Link to="/profile"><Card content={t("comment")} image={messageImg} /></Link>
+        <Link to="/comment"><Card content={t("comment")} image={mailImg} /></Link>
         </div>
       </div>
     </header>

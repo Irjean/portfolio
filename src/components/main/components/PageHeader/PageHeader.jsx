@@ -12,7 +12,7 @@ function PageHeader(props) {
             <span>Accueil</span>
           </Link>
         </div>
-        <h2>Profile</h2>
+        <h2>{props.pageTitle}</h2>
         <div></div>
       </div>
   )

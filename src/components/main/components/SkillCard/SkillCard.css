@@ -1,0 +1,65 @@
+.skill-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.skill-card > img{
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.skill-card:before, .skill-card::after{
+    content:"";
+    background: var(--secondary-color);
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    position: absolute;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.React{
+    background: rgb(49,82,155);
+    background: linear-gradient(90deg, rgba(49,82,155,1) 0%, rgba(0,179,255,1) 100%);
+}
+
+.Vue{
+    background: rgb(66,184,131);
+    background: linear-gradient(90deg, rgba(66,184,131,1) 0%, rgba(53,73,94,1) 100%);
+}
+
+.ThreeJS, .NextJS{
+    background-color: rgb(41, 41, 41);
+    background: linear-gradient(90deg, rgb(41, 41, 41) 0%, rgb(221, 210, 210) 100%);
+}
+
+.Laravel{
+    background-color: rgb(187, 51, 51);
+    background: linear-gradient(90deg, rgb(187, 51, 51) 0%, rgb(151, 7, 7) 100%);
+
+}
+
+.Firebase{
+    background-color: #ffc400;
+    background: linear-gradient(90deg, #ffc400 0%, #ff6f00 100%);
+
+}
+
+.Sass{
+    background-color: #ce679a;
+    background: linear-gradient(90deg, #ce679a 0%, #bb407e 100%);
+}
+
+.NodeJS{
+    background-color: #21a366;
+    background: linear-gradient(90deg, #21a366 0%, #177046 100%);
+
+}
