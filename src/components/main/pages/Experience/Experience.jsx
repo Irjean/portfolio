@@ -11,10 +11,10 @@ function Experience(props) {
 }, [])
   return (
     <motion.section id='exp-section'
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
+      initial={{opacity: 0, y: 100}}
+      animate={{opacity: 1, y: 0}}
       transition={{duration: 0.3, ease: "easeOut"}}
-      exit={{opacity: 0}}
+      exit={{opacity: 0, y: 100}}
     >
       <div id="timeline-content">
         <ul className="timeline">
@@ -50,12 +50,7 @@ function Experience(props) {
       </div>
       <div class="timeline-desktop">
         <div class="outer">
-          <motion.div class="card" 
-          initial={{opacity: 0, x: -100}}
-          animate={{opacity: 1, x: 0}}
-          transition={{duration: 0.5, ease: "easeOut"}}
-          exit={{opacity: 0, x: -100}}
-          >
+          <motion.div class="card" >
             <div class="info">
               <h3 class="title" data-date="Février 2023 - Aout 2023">Smile</h3>
               <h4>{t("experienceSmileTitle")}</h4>
@@ -65,12 +60,7 @@ function Experience(props) {
               </ul>
             </div>
           </motion.div>
-          <motion.div class="card"
-          initial={{opacity: 0, x: 100}}
-          animate={{opacity: 1, x: 0}}
-          transition={{duration: 0.5, ease: "easeOut"}}
-          exit={{opacity: 0, x: 100}}
-          >
+          <motion.div class="card" >
             <div class="info">
               <h3 className='title' data-date="Septembre 2021 - Septembre 2022">Standard En Ligne</h3>
               <h4>{t("experienceStandardTitle")}</h4>
@@ -82,12 +72,7 @@ function Experience(props) {
               </ul>
             </div>
           </motion.div>
-          <motion.div class="card"
-          initial={{opacity: 0, x: -100}}
-          animate={{opacity: 1, x: 0}}
-          transition={{duration: 0.5, ease: "easeOut"}}
-          exit={{opacity: 0, x: -100}}
-          >
+          <motion.div class="card">
             <div class="info">
               <h3 className='title' data-date="Avril 2021 - Aout 2021">HDM Network</h3>
               <h4>{t("experienceHdmTitle")}</h4>

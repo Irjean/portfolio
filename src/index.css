@@ -9,8 +9,16 @@ html, body, #root, .App{
   height: 100%;
 }
 
-h1, h2, h3, h4, p, span, body, main, header div{
+h1, h2, h3, h4, p, span, body, main{
   transition: .3s;
+}
+
+.light-mode span{
+  transition: 20ms;
+}
+
+.langage-card span{
+  transition: 0ms;
 }
 
 :root{
