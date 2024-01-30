@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { motion } from "framer-motion"
 import "./Contact.css";
 import emailjs from '@emailjs/browser';
 import Card from '../../../header/Card/Card';
@@ -43,7 +44,12 @@ const sendEmail = (e) => {
   };
 
 return (
-    <section id='contact-container'>
+    <motion.section id='contact-container'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.3, ease: "easeInOut"}}
+        exit={{opacity: 0}}
+    >
         <h2>{t("contactLinkTitle")}</h2>
         <div className='card-container'>
             <a href="mailto:c.spileers@outlook.fr"><Card content="c.spileers@outlook.fr" image={emailImg} /></a>
@@ -61,7 +67,7 @@ return (
             <button type="submit" value="Send" id='form-button' disabled={btnDisabled}>{t("contactFormButton")}</button>
             <p>{resultMsg}</p>
         </form>
-    </section>
+    </motion.section>
 )
 }
 

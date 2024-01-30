@@ -3,6 +3,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    max-width: calc(1170px - 390px);
+    width: 100%;
+    height: 100dvh;
 }
 
 strong {
@@ -23,12 +26,13 @@ strong {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    width: 100%;
 }
 
 /* Timeline */
 
 .timeline {
-  border-left: 4px solid #004ffc;
+  border-left: 4px solid var(--link-color);
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;    
   background: fade(white, 3%);
@@ -38,7 +42,7 @@ strong {
   line-height: 1.2em;
   font-size: 1.03em;   
   padding: 0px 10px 50px 30px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   list-style: none;
   text-align: left;  
   font-weight: 100;  
@@ -90,7 +94,7 @@ strong {
     }
 
     &:after {
-        background-color: #004ffc;   
+        background-color: var(--link-color);   
         border-radius: 50%;  
         height: 12px;
         width: 12px;
@@ -103,5 +107,165 @@ strong {
         list-style-position: inside;
         font-size: .9rem;
     }
+  }
+}
+
+/* Timeline desktop */
+
+/* Timeline Container */
+.timeline-desktop {
+  background: var(--primary-color);
+  height: 100dvh;
+  padding: 0 50px;
+  display: none;
+}
+
+/* Card container */
+.timeline-desktop .card {
+  position: relative;
+  width: calc(100%);
+}
+
+/* setting padding based on even or odd */
+.timeline-desktop .card:nth-child(odd) {
+  padding: 30px 0 30px 30px;
+}
+.timeline-desktop .card:nth-child(even) {
+  padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.timeline-desktop .card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid var(--link-color);
+}
+
+/* Setting the border of top, bottom, left */
+.timeline-desktop .card:nth-child(odd)::before {
+  left: 0px;
+  top: -4.6px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+@media only screen and (max-width: 400px) {
+  .timeline-desktop .card:nth-child(odd)::before {
+    top: -5px;
+    bottom: -5px;
+  }
+}
+
+/* Setting the border of top, bottom, right */
+.timeline-desktop .card:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first card */
+.timeline-desktop .card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.timeline-desktop .card:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.timeline-desktop .card:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Information about the timeline */
+.info {
+  display: flex;
+  flex-direction: column;
+  background: var(--secondary-color);
+  color: gray;
+  border-radius: 10px;
+  padding: 30px 20px 15px 20px;
+}
+
+/* Title of the card */
+.title {
+  color: var(--text-color);
+  position: relative;
+}
+
+/* Timeline dot  */
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--link-color);
+  border-radius: 999px;
+  border: 3px solid var(--link-color);
+}
+
+.title::after{
+  position: absolute;
+  top: -18px;
+  left: 0px;    
+  color: fade(white, 40%);    
+  content: attr(data-date);
+  text-align: left;
+  font-weight: 100;    
+  font-size: 0.8em;
+  min-width: 120px; 
+  width: 100%;
+}
+
+.timeline-desktop .card:nth-child(even) > .info > .title::after{
+  text-align: end;
+}
+
+.timeline-desktop .card h4{
+  color: var(--text-color);
+}
+
+.timeline-desktop .card ul{
+  list-style-position: inside;
+  list-style-type: circle;
+  font-size: .9rem;
+}
+
+.timeline-desktop .card:nth-child(even) ul{
+  text-align: start;
+  direction: rtl;
+}
+
+/* text right if the card is even  */
+.timeline-desktop .card:nth-child(even) > .info > .title, .timeline-desktop .card:nth-child(even) > .info > h4 {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.timeline-desktop .card:nth-child(odd) > .info > .title::before {
+  left: -55px;
+}
+
+/* setting dot to the right if the card is odd */
+.timeline-desktop .card:nth-child(even) > .info > .title::before {
+  right: -55px;
+}
+
+
+@media screen and (min-width: 1000px) {
+  .timeline{
+    display: none;
+  }
+
+  .timeline-desktop{
+    display: block;
   }
 }

@@ -1,4 +1,4 @@
-.card{
+.card-container .card{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,7 +9,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.card:hover{
+.card-container .card:hover{
     cursor: pointer;
     background-color: var(--hover-color);
 }
@@ -24,7 +24,7 @@
     border-bottom-right-radius: 10px;
 }
 
-.card:first-child .right-part{
+.card-container a:first-child .right-part{
     border: none;
 }
 
@@ -32,7 +32,7 @@
     height: 70%;
 }
 
-.card span{
+.card-container .card span{
     display: flex;
     flex-direction: column;
     align-items: flex-start;

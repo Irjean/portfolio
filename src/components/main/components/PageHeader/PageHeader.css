@@ -4,16 +4,18 @@
     align-items: center;
     justify-content: space-between;
     height: 25px;
-    padding-top: 20px;
+    width: 100%;
+    padding-top: 30px;
     margin-bottom: 30px;
 }
 
-.top-page > div, .top-page > h2{
-    width: 33.3%;
+.top-page > div{
+    width: 15%;
 }
 
 .top-page h2{
     text-align: center;
+    width: 70%;
 }
 
 .back-button a{
@@ -33,4 +35,18 @@
 
 .back-button img{
     height: 25px;
+}
+
+.hidden{
+    display: none;
+}
+
+@media screen and (min-width: 781px) {
+    .top-page{
+        justify-content: center;
+    }
+
+    .top-page h2{
+        width: 100%;
+    }
 }

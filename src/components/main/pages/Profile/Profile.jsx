@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { motion } from "framer-motion"
 import "./Profile.css";
 import profileImg from "../../../../assets/img/mwa.png";
 import { useTranslation } from 'react-i18next';
@@ -10,7 +11,12 @@ function Profile(props) {
     props.setPageTitle(t("profile"));
   }, [])
   return (
-    <>
+    <motion.div
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      transition={{duration: 0.3, ease: "easeOut"}}
+      exit={{opacity: 0}}
+    >
     <section className='profile'>
       <div className='image-container'>
         <img src={profileImg} alt="mwa" />
@@ -34,7 +40,7 @@ function Profile(props) {
       {t("profileActivityContent")}
       </p>
     </section>
-    </>
+    </motion.div>
   )
 }
 

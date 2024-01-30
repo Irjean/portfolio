@@ -13,6 +13,7 @@
 #presentation, #activity{
     padding: 0 15px;
     margin-top: 30px;
+    max-width: calc(1400px - 390px);
     width: calc(100% - 30px);
     background-color: var(--secondary-color);
     border-radius: 10px;
@@ -23,4 +24,11 @@
 #presentation h4, #activity h4{
     margin-bottom: 5px;
     font-size: 1.1rem;
+}
+
+@media screen and (min-width: 781px) {
+
+    .image-container img{
+        width: 20%;
+    }
 }

@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0 15px;
+    max-width: calc(1170px - 390px);
+    width: 100%;
 }
 
 #comment-section h2{
