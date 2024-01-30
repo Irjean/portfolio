@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate, useLocation, Outlet } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import './App.css';
 //Components
 import Profile from './components/main/pages/Profile/Profile';
@@ -48,9 +48,9 @@ function App() {
 
   return (
     <div className="App">
-        <Header page={page} lightMode={lightMode} setLightMode={setLightMode} />
-        <main className={page ? "show" : ""}>
-          <AnimatePresence mode='wait' initial={true}>
+        <Header setPage={setPage} page={page} lightMode={lightMode} setLightMode={setLightMode} />
+        <motion.main className={page ? "show" : ""}>
+          <AnimatePresence mode='wait' initial={false}>
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<>
             <PageHeader setPage={setPage} pageTitle={pageTitle} />
@@ -66,7 +66,7 @@ function App() {
             </Route>
           </Routes>
           </AnimatePresence>
-        </main>
+        </motion.main>
     </div>
   );
 }

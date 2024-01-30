@@ -14,6 +14,12 @@ function Contact(props) {
     const [resultMsg, setResultMsg] = useState("");
     const form = useRef();
 
+    const animation = {
+        initial: {opacity: 0, scale: .5},
+        animate: {opacity: 1, scale: 1, transition: {delay: .5}},
+        exit: {opacity: 0, scale: .5}
+    }
+
 useEffect(() => {
     props.setPage(true);
     props.setPageTitle("Contact");
@@ -51,13 +57,13 @@ return (
         exit={{opacity: 0}}
     >
         <h2>{t("contactLinkTitle")}</h2>
-        <div className='card-container'>
+        <motion.div className='card-container' variants={animation} initial="initial" animate="animate" exit="exit">
             <a href="mailto:c.spileers@outlook.fr"><Card content="c.spileers@outlook.fr" image={emailImg} /></a>
             <a href="https://github.com/Irjean" target='_blank'><Card content="Github" image={githubImg} /></a>
             <a href="tel:+33760474171"><Card content="+33 7 60 47 41 71" image={phoneImg} /></a>
-        </div>
+        </motion.div>
         <h3>{t("contactFormTitle")}</h3>
-        <form ref={form} onSubmit={sendEmail} id='contact-form'>
+        <motion.form ref={form} onSubmit={sendEmail} id='contact-form' variants={animation} initial="initial" animate="animate" exit="exit">
             <label>{t("contactNameLabel")}</label>
             <input type="text" name="user_name" id='name' placeholder={t("contactNameInput")} />
             <label>{t("contactEmailLabel")}</label>
@@ -66,7 +72,7 @@ return (
             <textarea name="message" id='form-message' placeholder={t("contactMessageInput")} maxLength="1000"/>
             <button type="submit" value="Send" id='form-button' disabled={btnDisabled}>{t("contactFormButton")}</button>
             <p>{resultMsg}</p>
-        </form>
+        </motion.form>
     </motion.section>
 )
 }
