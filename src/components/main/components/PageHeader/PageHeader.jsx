@@ -28,7 +28,7 @@ function PageHeader(props) {
       exit={{opacity: 0}}
     >
         <div className={`back-button ${width > 780 ? "hidden" : ""}`}>
-          <Link to="/" onClick={() => props.setPage(false)}>
+          <Link to="/" onClick={() => {props.setPage(false); props.setPageHighlight("")}}>
             <img src={leftArrow} alt="retour" />
             <span>Accueil</span>
           </Link>

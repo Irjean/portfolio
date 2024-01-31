@@ -50,7 +50,14 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if(pageHighlight == "") return
+    if(pageHighlight == "") {
+      if(prevHighlight == ""){
+        return
+      }
+      document.querySelector(`#${prevHighlight}`).classList.remove("highlight");
+      setPrevHighlight(pageHighlight);
+      return
+    }
     document.querySelector(`#${pageHighlight}`).classList.add("highlight");
     if(prevHighlight == "") {setPrevHighlight(pageHighlight); return}
     else {document.querySelector(`#${prevHighlight}`).classList.remove("highlight");setPrevHighlight(pageHighlight);}
@@ -64,7 +71,7 @@ function App() {
           <AnimatePresence mode='wait' initial={false}>
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<>
-            <PageHeader setPage={setPage} pageTitle={pageTitle} />
+            <PageHeader setPage={setPage} pageTitle={pageTitle} setPageHighlight={setPageHighlight} />
             <Outlet />
             </>}>
 
