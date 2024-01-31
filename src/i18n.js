@@ -5,7 +5,7 @@ i18next
 .use(initReactI18next)
 .init({
     debug: false,
-    lng: "en",
+    lng: "fr",
     fallbackLng: ["en", "fr"],
     resources: {
         en: {
@@ -22,7 +22,7 @@ i18next
                 commentTitle: "Comment",
                 profileJob: "Fullstack Developer",
                 profilePresTitle: "Who am I?",
-                profilePresContent: "I'm a fullstack developer mostly using React and NodeJS. I'm versatile and I know who to adapt to the different technical needs facing me.",
+                profilePresContent: "I'm a fullstack developer mostly using React and NodeJS. I'm versatile and I know how to adapt to the different technical needs facing me.",
                 profilePresContentBis: "Autonomous without neglecting team spirit, I know how to make myself useful in all types of environments with the aim of being the most productive and efficient.",
                 profileActivityTitle: "Actual situation",
                 profileActivityContent: "Holding the title of Multimedia Developer at the RNCP, I am currently looking for a job around Lyon.",
@@ -74,8 +74,8 @@ i18next
                 commentTitle: "Commentaire",
                 profileJob: "Développeur Fullstack",
                 profilePresTitle: "Qui suis-je ?",
-                profilePresContent: "Je suis un développeur fullstack utilisant principalement React et NodeJS. Je suis polyvalant et je sais m'adapter aux différents besoins techniques qui s'imposent à moi.",
-                profilePresContentBis: "Autonome sans pour autant délaisser l'esprit d'équipe, je sais me rendre utiles dans tout types d'envrionnements dans le but d'être le plus productif et éfficace.",
+                profilePresContent: "Je suis un développeur fullstack utilisant principalement React et NodeJS. Je suis polyvalent et je sais m'adapter aux différents besoins techniques qui s'imposent à moi.",
+                profilePresContentBis: "Autonome sans pour autant délaisser l'esprit d'équipe, je sais me rendre utile dans tous types d'envrionnements dans le but d'être le plus productif et efficace.",
                 profileActivityTitle: "Situation actuelle",
                 profileActivityContent: "En possession du titre de Développeur multimédia au RNCP, je suis actuellement à la recherche d'un emploi aux alentours de Lyon.",
                 skillMoreToCome: "Plus à venir...",
@@ -96,10 +96,10 @@ i18next
                 projectLearnMore: "Essayez-le !",
                 projectArticleContent: "Reprise d'un article web pour apprendre HTML et CSS.",
                 projectTodoContent: "Création d'une liste de tâches dans le but de se familiariser avec React.",
-                projectDeezerContent: "Site web qui permet de chercher des éxtraits de musique grâce à l'API de Deezer.",
-                projectPokemonContent: "Webapp permettant de consulter tous les pokémons disponibles et d'en ajouter certains en favoris.",
+                projectDeezerContent: "Site web qui permet de chercher des extraits de musique grâce à l'API de Deezer.",
+                projectPokemonContent: "Webapp permettant de consulter tous les Pokémon disponibles et d'en ajouter certains en favoris.",
                 projectChatContent: "Chat en direct et en ligne fait avec Firebase.",
-                projectMinecraftContent: "Prototype du jeu \"Minecraft\" verison web pour m'exercer sur ThreeJS.",
+                projectMinecraftContent: "Prototype du jeu \"Minecraft\" version web pour m'exercer sur ThreeJS.",
                 contactLinkTitle: "Mes liens",
                 contactFormTitle: "Envoyez-moi un message",
                 contactNameLabel: "Nom",
