@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 function LightCard(props) {
     let root = document.querySelector(":root");
     const { t } = useTranslation();
+    const [defaultChecked, setDefaultChecked] = useState(localStorage.getItem("light") == "true" ? true : false);
 
     useEffect(() => {
         if(props.lightMode){
@@ -33,7 +34,7 @@ function LightCard(props) {
         <div className='right-part'>
             <span>{t("light")}</span>
             <label htmlFor="light-input" className='switch'>
-            <input id="light-input" type="checkbox" name='light-input' onChange={() => props.setLightMode(!props.lightMode)} />
+            <input id="light-input" type="checkbox" name='light-input' onChange={() => {props.setLightMode(!props.lightMode); localStorage.setItem("light", !props.lightMode)}} defaultChecked={defaultChecked} />
             <span className='slider'></span>
             </label>
         </div>

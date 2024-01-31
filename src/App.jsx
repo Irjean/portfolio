@@ -21,7 +21,7 @@ function App() {
   let [pageTitle, setPageTitle] = useState('');
   let [pageHighlight, setPageHighlight] = useState("");
   let [prevHighlight, setPrevHighlight] = useState("");
-  let [lightMode, setLightMode] = useState(false);
+  let [lightMode, setLightMode] = useState(localStorage.getItem("light") == "true" ? true : false);
   let [isDesktop, setDesktop] = useState(window.innerWidth > 790);
 
 

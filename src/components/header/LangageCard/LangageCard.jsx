@@ -6,7 +6,7 @@ import frImg from "../../../assets/img/french.png";
 
 function LangageCard() {
   const { i18n } = useTranslation();
-  let [lang, setLang] = useState("fr");
+  let [lang, setLang] = useState(localStorage.getItem("lang") !== undefined ? localStorage.getItem("lang") : "fr");
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function LangageCard() {
         <img src={lang === "fr" ? frImg : ukImg} className="card-image" alt="soleil" />
         <div className='right-part'>
             <span>{t("lang")}</span>
-            <select name="lang" id="lang" onChange={(e) => setLang(e.target.value)}>
+            <select name="lang" id="lang" onChange={(e) => {setLang(e.target.value); localStorage.setItem("lang", e.target.value)}} defaultValue={lang}>
               <option value="fr">Français</option>
               <option value="en">English</option>
             </select>
