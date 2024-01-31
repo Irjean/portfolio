@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import "./Skill.css";
 import SkillCard from '../../components/SkillCard/SkillCard';
-import htmlIcon from "../../../../assets/img/tech/html-5.png";
-import cssIcon from "../../../../assets/img/tech/css3.png";
-import jsIcon from "../../../../assets/img/tech/javascript.png";
+//Import images
 import reactIcon from "../../../../assets/img/tech/react-icon.png";
 import firebaseIcon from "../../../../assets/img/tech/firebase.png";
 import laravelIcon from "../../../../assets/img/tech/laravel.png";
@@ -15,14 +14,33 @@ import sassIcon from "../../../../assets/img/tech/sass.png";
 import nextIcon from "../../../../assets/img/tech/next.png";
 import nextWhiteIcon from "../../../../assets/img/tech/nextwhite.png";
 import nodeIcon from "../../../../assets/img/tech/node-js.png";
-import { useTranslation } from 'react-i18next';
+import nuxtImg from "../../../../assets/img/tech/nuxt.png";
+import svelteImg from "../../../../assets/img/tech/svelte.png";
+import solidImg from "../../../../assets/img/tech/solid.png";
+import symphonyImg from "../../../../assets/img/tech/symphony.png";
+import cSharpImg from "../../../../assets/img/tech/c-sharp.png";
+import javaImg from "../../../../assets/img/tech/java.png";
 
 function Skill(props) {
   const {t} = useTranslation();
+  const imgArray = [nuxtImg, svelteImg, solidImg, symphonyImg, cSharpImg, javaImg];
+  const [comingImg, setComingImg] = useState(imgArray[0]);
+
   useEffect(() => {
     props.setPage(true);
     props.setPageTitle(t("tools"));
-}, [])
+    props.setPageHighlight("skill");
+}, []);
+
+useEffect(() => {
+  setTimeout(() => {
+    if(imgArray[imgArray.findIndex((i) => i == comingImg) + 1] == undefined){
+      setComingImg(imgArray[0])
+    } else {
+      setComingImg(imgArray[imgArray.findIndex((i) => i == comingImg) + 1]);
+    }
+  }, 1500)
+}, [comingImg])
 
   const animateTop = {
     initial: {opacity: 0, y: -100},
@@ -66,7 +84,7 @@ function Skill(props) {
       </div>
       <div className='skill-card-container'>
         <SkillCard img={nodeIcon} title={"NodeJS"} animation={animateLeft} delayTime={7} />
-        <SkillCard img={reactIcon} title={t("skillMoreToCome")} animation={animateRight} delayTime={8} />
+        <SkillCard img={comingImg} title={t("skillMoreToCome")} animation={animateRight} delayTime={8} />
       </div>
     </motion.section>
   )

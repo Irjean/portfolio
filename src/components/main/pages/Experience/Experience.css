@@ -5,7 +5,7 @@
     justify-content: flex-start;
     max-width: calc(1170px - 390px);
     width: 100%;
-    height: 100dvh;
+    min-height: 100dvh;
 }
 
 strong {

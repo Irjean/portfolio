@@ -11,6 +11,7 @@ import Contact from "./components/main/pages/Contact/Contact";
 import Skill from "./components/main/pages/Skill/Skill";
 import Experience from "./components/main/pages/Experience/Experience";
 import Project from "./components/main/pages/Project/Project";
+import NotFound from "./components/main/pages/notFound/NotFound";
 
 function App() {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ function App() {
   const width = useWindowSize();
   let [page, setPage] = useState(false);
   let [pageTitle, setPageTitle] = useState('');
+  let [pageHighlight, setPageHighlight] = useState("");
+  let [prevHighlight, setPrevHighlight] = useState("");
   let [lightMode, setLightMode] = useState(false);
   let [isDesktop, setDesktop] = useState(window.innerWidth > 790);
 
@@ -46,6 +49,14 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if(pageHighlight == "") return
+    document.querySelector(`#${pageHighlight}`).classList.add("highlight");
+    if(prevHighlight == "") {setPrevHighlight(pageHighlight); return}
+    else {document.querySelector(`#${prevHighlight}`).classList.remove("highlight");setPrevHighlight(pageHighlight);}
+    
+  }, [pageHighlight])
+
   return (
     <div className="App">
         <Header setPage={setPage} page={page} lightMode={lightMode} setLightMode={setLightMode} />
@@ -57,12 +68,13 @@ function App() {
             <Outlet />
             </>}>
 
-              <Route path="profile" element={<Profile  setPage={setPage} setPageTitle={setPageTitle} />} />
-              <Route path="skill" element={<Skill setPage={setPage} setPageTitle={setPageTitle} lightMode={lightMode} />} />
-              <Route path="experience" element={<Experience setPage={setPage} setPageTitle={setPageTitle} />} />
-              <Route path="project" element={<Project setPage={setPage} setPageTitle={setPageTitle} lightMode={lightMode} />} />
-              <Route path="contact" element={<Contact setPage={setPage} setPageTitle={setPageTitle} lightMode={lightMode} />} />
-              <Route path="comment" element={<Comment setPage={setPage} setPageTitle={setPageTitle} lightMode={lightMode} />} />
+              <Route path="profile" element={<Profile  setPage={setPage} setPageTitle={setPageTitle} setPageHighlight={setPageHighlight} />} />
+              <Route path="skill" element={<Skill setPage={setPage} setPageTitle={setPageTitle} lightMode={lightMode} setPageHighlight={setPageHighlight} />} />
+              <Route path="experience" element={<Experience setPage={setPage} setPageTitle={setPageTitle} setPageHighlight={setPageHighlight} />} />
+              <Route path="project" element={<Project setPage={setPage} setPageTitle={setPageTitle} lightMode={lightMode} setPageHighlight={setPageHighlight} />} />
+              <Route path="contact" element={<Contact setPage={setPage} setPageTitle={setPageTitle} lightMode={lightMode} setPageHighlight={setPageHighlight} />} />
+              <Route path="comment" element={<Comment setPage={setPage} setPageTitle={setPageTitle} lightMode={lightMode} setPageHighlight={setPageHighlight} />} />
+              <Route path="*" element={<NotFound setPage={setPage} setPageTitle={setPageTitle} />} />
             </Route>
           </Routes>
           </AnimatePresence>

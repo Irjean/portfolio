@@ -13,11 +13,11 @@ h1, h2, h3, h4, p, span, body, main{
   transition: .3s;
 }
 
-.light-mode span{
+.light-mode span {
   transition: 20ms;
 }
 
-.langage-card span{
+.langage-card span, main h1, main h2, main h3,main  h4, main p, main span{
   transition: 0ms;
 }
 

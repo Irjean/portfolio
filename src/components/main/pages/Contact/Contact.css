@@ -46,21 +46,25 @@
 #form-message{
     height: 100px;
     padding-top: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    resize: vertical;
 }
 
 #form-button{
     height: 30px;
     width: 80px;
-    background-color: var(--link-color);
+    background-color: var(--input-color);
     color: white;
     border: none;
     border-radius: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
+    cursor: pointer;
+    text-shadow: 0px 0px 5px #000000;
 }
 
 #form-button:hover{
-    background-color: var(--link-hover);
+    background-color: #29aa4b;
 }
 
 #form-button:disabled{

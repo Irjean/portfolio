@@ -33,9 +33,14 @@ header h1{
   color: var(--text-color);
 }
 
+header .highlight{
+  background-color: var(--input-bg) !important;
+}
+
 main{
     position: absolute;
     min-height: 100dvh;
+    height:max-content;
     width: 100dvw;
     top: 0;
     left: 100%;

@@ -8,6 +8,7 @@ function Experience(props) {
   useEffect(() => {
     props.setPage(true);
     props.setPageTitle(t("exp"));
+    props.setPageHighlight("experience");
 }, [])
   return (
     <motion.section id='exp-section'

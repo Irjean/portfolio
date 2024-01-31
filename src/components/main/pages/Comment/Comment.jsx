@@ -10,6 +10,7 @@ function Comment(props) {
     useEffect(() => {
         props.setPage(true);
         props.setPageTitle(t("commentTitle"));
+        props.setPageHighlight("comment");
       }, [])
   return (
     <motion.section id="comment-section"

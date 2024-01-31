@@ -9,6 +9,7 @@ function Profile(props) {
   useEffect(() => {
     props.setPage(true);
     props.setPageTitle(t("profile"));
+    props.setPageHighlight("profile-card");
   }, [])
   return (
     <motion.div

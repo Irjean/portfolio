@@ -43,6 +43,7 @@ function Project(props) {
     }
     props.setPage(true);
     props.setPageTitle(t("project"));
+    props.setPageHighlight("project")
 }, [])
   return (
     <motion.section id='project-section'

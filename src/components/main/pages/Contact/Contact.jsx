@@ -6,6 +6,7 @@ import Card from '../../../header/Card/Card';
 import emailImg from "../../../../assets/img/mail.png";
 import githubImg from "../../../../assets/img/github.png";
 import phoneImg from "../../../../assets/img/phone.png";
+import exteriorLinkImg from "../../../../assets/img/exterior-link.png";
 import { useTranslation } from 'react-i18next';
 
 function Contact(props) {
@@ -16,13 +17,14 @@ function Contact(props) {
 
     const animation = {
         initial: {opacity: 0, scale: .5},
-        animate: {opacity: 1, scale: 1, transition: {delay: .5}},
+        animate: {opacity: 1, scale: 1, transition: {delay: .1}},
         exit: {opacity: 0, scale: .5}
     }
 
 useEffect(() => {
     props.setPage(true);
     props.setPageTitle("Contact");
+    props.setPageHighlight("contact");
 }, [])
 
 const sendEmail = (e) => {
@@ -58,18 +60,18 @@ return (
     >
         <h2>{t("contactLinkTitle")}</h2>
         <motion.div className='card-container' variants={animation} initial="initial" animate="animate" exit="exit">
-            <a href="mailto:c.spileers@outlook.fr"><Card content="c.spileers@outlook.fr" image={emailImg} /></a>
-            <a href="https://github.com/Irjean" target='_blank'><Card content="Github" image={githubImg} /></a>
-            <a href="tel:+33760474171"><Card content="+33 7 60 47 41 71" image={phoneImg} /></a>
+            <a href="mailto:c.spileers@outlook.fr"><Card content="c.spileers@outlook.fr" image={emailImg} replaceArrow={exteriorLinkImg} /></a>
+            <a href="https://github.com/Irjean" target='_blank'><Card content="https://github.com/Irjean" image={githubImg} replaceArrow={exteriorLinkImg} /></a>
+            <a href="tel:+33760474171"><Card content="+33 7 60 47 41 71" image={phoneImg} replaceArrow={exteriorLinkImg} /></a>
         </motion.div>
         <h3>{t("contactFormTitle")}</h3>
         <motion.form ref={form} onSubmit={sendEmail} id='contact-form' variants={animation} initial="initial" animate="animate" exit="exit">
             <label>{t("contactNameLabel")}</label>
-            <input type="text" name="user_name" id='name' placeholder={t("contactNameInput")} />
+            <input type="text" name="user_name" id='name' placeholder={t("contactNameInput")}  required/>
             <label>{t("contactEmailLabel")}</label>
-            <input type="email" name="user_email" id='email' placeholder={t("contactEmailInput")} />
+            <input type="email" name="user_email" id='email' placeholder={t("contactEmailInput")}  required/>
             <label>{t("contactMessageLabel")}</label>
-            <textarea name="message" id='form-message' placeholder={t("contactMessageInput")} maxLength="1000"/>
+            <textarea name="message" id='form-message' placeholder={t("contactMessageInput")} maxLength="1000" required/>
             <button type="submit" value="Send" id='form-button' disabled={btnDisabled}>{t("contactFormButton")}</button>
             <p>{resultMsg}</p>
         </motion.form>
