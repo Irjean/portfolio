@@ -15,7 +15,7 @@ function LangageCard() {
 
   return (
     <div className='langage-card card'>
-        <img src={lang === "fr" ? frImg : ukImg} className="card-image" alt="soleil" />
+        <img src={i18n.language === "fr" ? frImg : ukImg} className="card-image" alt="soleil" />
         <div className='right-part'>
             <span>{t("lang")}</span>
             <select name="lang" id="lang" onChange={(e) => {setLang(e.target.value); localStorage.setItem("lang", e.target.value)}} defaultValue={lang}>
