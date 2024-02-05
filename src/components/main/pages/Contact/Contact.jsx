@@ -6,6 +6,7 @@ import Card from '../../../header/Card/Card';
 import emailImg from "../../../../assets/img/mail.png";
 import githubImg from "../../../../assets/img/github.png";
 import phoneImg from "../../../../assets/img/phone.png";
+import linkedinImg from "../../../../assets/img/linkedin.png";
 import exteriorLinkImg from "../../../../assets/img/exterior-link.png";
 import { useTranslation } from 'react-i18next';
 
@@ -61,6 +62,7 @@ return (
         <h2>{t("contactLinkTitle")}</h2>
         <motion.div className='card-container' variants={animation} initial="initial" animate="animate" exit="exit">
             <a href="mailto:c.spileers@outlook.fr"><Card content="c.spileers@outlook.fr" image={emailImg} replaceArrow={exteriorLinkImg} /></a>
+            <a href="https://www.linkedin.com/in/cl%C3%A9ment-spileers-3b44b8179/" target='_blank'><Card content="Clément Spileers" image={linkedinImg} replaceArrow={exteriorLinkImg} /></a>
             <a href="https://github.com/Irjean" target='_blank'><Card content="https://github.com/Irjean" image={githubImg} replaceArrow={exteriorLinkImg} /></a>
             <a href="tel:+33760474171"><Card content="+33 7 60 47 41 71" image={phoneImg} replaceArrow={exteriorLinkImg} /></a>
         </motion.div>
